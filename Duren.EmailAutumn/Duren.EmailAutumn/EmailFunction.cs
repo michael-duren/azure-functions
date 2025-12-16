@@ -14,7 +14,7 @@ public class EmailFunction(EmailClient emailClient, ILogger<EmailFunction> logge
     private readonly EmailClient _emailClient = emailClient;
 
     [Function(nameof(EmailFunction))]
-    public async Task Run([TimerTrigger("0 0 9 * * *")] TimerInfo timerInfo)
+    public async Task Run([TimerTrigger("0 0 5 * * *")] TimerInfo timerInfo)
     {
         logger.LogInformation("C# Timer trigger function executed at: {Time}", DateTimeOffset.Now);
         var emailMessage = new EmailMessage(
